@@ -12,9 +12,27 @@ import connectDB from "./db/db.js";
 
 
 
-connectDB() ;
+connectDB() 
 
+.then( ()=> {
+    app.listen(process.env.PORT || 8000 , ()=>{
+        console.log( "SERVER IS RUNNING ON PORT DEFAULT");
 
+        
+    })
+}
+
+)
+
+.catch((err)=> {
+    console.log(
+        "mongo db connection is faulty" , err
+    );
+    
+     
+}
+
+)
 
 
 
